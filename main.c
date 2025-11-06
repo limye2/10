@@ -6,20 +6,11 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, const char * argv[]) {
-    int i=0;
-    char str[4];
-    str[0] = 'a';
-    str[1] = 'b';
-    str[2] = 'c';
-    str[3] = '\0';
+    char str[30] = "happy C programming";
     
-    printf("%s\n", str);
-    
-    while(str[i] != '\0'){
-        printf("%c", str[i]);
-        i++;
-    }
+    printf("문자열 \"%s\"의 길이 : %i", str, strlen(str));
     return 0;
 }
