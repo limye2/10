@@ -11,23 +11,23 @@
 
 int main(int argc, const char * argv[]) {
     FILE* fp;
-    char input[100];
-    int i;
+    char c;
     
-    //1.open file //경로 직접 입력 option+command
-    fp = fopen("/Users/iyelim/10/sample.txt", "w");
-    
-    //2.write file
-    for(i=0; i<3; i++)
+    //fopen
+    fp = fopen("sample.txt","r");
+    if(fp == NULL)
     {
-        //2-1. print "input a word"
-        printf("input a word:");
-        //2-2. scanf a string
-        scanf("%s", input);
-        //2-3. fprintf()
-        fprintf(fp, "%s\n", input);
+        printf("failed to open\n");
+        return -1;
     }
-    //3. close filr
+    
+    while((c=fgetc(fp)) !=EOF)
+    {
+        putchar(c);
+    }
+    
+    
     fclose(fp);
+    
     return 0;
 }
